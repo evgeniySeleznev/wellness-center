@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wellness-center-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: wellness-center-service
+  template:
+    metadata:
+      labels:
+        app: wellness-center-service
+    spec:
+      containers:
+      - name: wellness-center-service
+        image: wellness-center-service
+        ports:
+        - containerPort: 8080
+        env:
+        - name: REDIS_HOST
+          value: "redis:6379"
+        - name: KAFKA_BROKER
+          value: "kafka:9092"
+        - name: ELASTICSEARCH_HOST
+          value: "elasticsearch:9200"

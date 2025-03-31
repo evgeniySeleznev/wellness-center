@@ -1,0 +1,24 @@
+# Go
+bin/
+*.exe
+*.so
+*.test
+
+# Dependency directories
+vendor/
+go.sum
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Environment files
+.env
+.env.local
+
+# Docker
+docker-compose.override.yml
+
+# Elasticsearch
+data/
